@@ -25,14 +25,15 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 
 void drawBox(const int& i_c, const int& j_c)
 {
-	const int thickness = 10;
+	const int thickness = 10;   //µÎ²²
 
 	for (int j = j_c - thickness; j < j_c + thickness; j++)
 		for (int i = i_c - thickness; i < i_c + thickness; i++)
 		{
-			drawPixel(i, j, 1.0f, 1.0f, 0.0f);
+			drawPixel(i, j, 0.0f, 1.0f, 0.0f);
 		}
 }
+
 
 int main(void)
 {
@@ -73,7 +74,9 @@ int main(void)
 
 		drawBox(100, 100);
 
-
+		drawLine(400, 400, 480, 479, 0.0f, 1.0f, 0.0f);
+		drawLine(401, 400, 530, 400, 0.0f, 1.0f, 0.0f);
+		drawLine(480, 479, 530, 400, 0.0f, 1.0f, 0.0f);
 
 
 
