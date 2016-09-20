@@ -23,6 +23,17 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 	}
 }
 
+void drawBox(const int& i_c, const int& j_c)
+{
+	const int thickness = 10;
+
+	for (int j = j_c - thickness; j < j_c + thickness; j++)
+		for (int i = i_c - thickness; i < i_c + thickness; i++)
+		{
+			drawPixel(i, j, 1.0f, 1.0f, 0.0f);
+		}
+}
+
 int main(void)
 {
 	GLFWwindow* window;
@@ -49,7 +60,22 @@ int main(void)
 
 		std::fill_n(pixels, width*height * 3, 1.0f);	// white background
 
-		drawLine(0, 0, 639, 479, 1.0f,.0f, 0.0f);      //선 그릴수 있음.
+         //선 그릴수 있음.
+		drawLine(200, 200, 500, 200, 0.0f, 0.0f, 1.0f);
+
+		//for(int j=100;j<300;j++)
+		//	for (int i = 100; i < 300; i++)
+		//	{
+		//		pixels[(i + width*j) * 3 + 0] = 0.0f;
+		//		pixels[(i + width*j) * 3 + 1] = 1.0f;
+		//		pixels[(i + width*j) * 3 + 2] = 0.0f;
+		//	}
+
+		drawBox(100, 100);
+
+
+
+
 
 		glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 		//We do that.
